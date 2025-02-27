@@ -1,6 +1,6 @@
 import express from 'express';
 import routes from './routes';
-import { LOGS } from './utils/index.logs';
+import { LOGS } from './utils/custom.logs';
 
 const app = express();
 app.use(express.json());
