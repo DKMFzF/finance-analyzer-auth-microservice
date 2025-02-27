@@ -3,7 +3,7 @@ import axios from 'axios';
 import logger from '../utils/logger/logger';
 
 jest.mock('axios');
-jest.mock('../../src/utils/logger');
+jest.mock('../../src/utils/logger/logger');
 
 describe('checkUserCredentials', () => {
   it('should return user data if credentials are valid', async () => {

@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 // @ts-ignore
 import jwt from 'jsonwebtoken';
-// import { SECRET_KEY } from '../utils/jwt';
 import { TokenPayload } from '../types/user';
 import { config } from "../config/index.config"
 import logger from '../utils/logger/logger';

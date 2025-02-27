@@ -6,7 +6,7 @@ import logger from '../utils/logger/logger';
 
 // Мокаем jwt и logger
 jest.mock('jsonwebtoken');
-jest.mock('../../src/utils/logger');
+jest.mock('../../src/utils/logger/logger');
 
 describe('protectedRoute', () => {
   let req: Partial<Request>;

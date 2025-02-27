@@ -7,7 +7,7 @@ import { Request, Response, NextFunction } from 'express';
 
 jest.mock('../../src/services/auth.service');
 jest.mock('jsonwebtoken');
-jest.mock('../../src/utils/logger');
+jest.mock('../../src/utils/logger/logger');
 
 describe('login', () => {
   let req: Partial<Request>;
