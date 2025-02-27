@@ -21,6 +21,8 @@ app.use(rateLimit({
   max: 100 
 }));
 
+// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 logger.info(LOGS.SERVICE_INIT);
 
 export default app;
