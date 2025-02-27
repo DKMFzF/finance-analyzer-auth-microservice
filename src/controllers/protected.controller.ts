@@ -4,16 +4,26 @@ import jwt from 'jsonwebtoken';
 // import { SECRET_KEY } from '../utils/jwt';
 import { TokenPayload } from '../types/user';
 import { config } from "../config/index.config"
+import logger from '../utils/logger';
 
 export const protectedRoute = (req: Request, res: Response) => {
     const authHeader = req.headers.authorization;
-    if (!authHeader) return res.status(401).json({ error: 'Нет токена' });
+    logger.info('[LOG]: protect access');
+    if (!authHeader) {
+        logger.error('[ERROR]: in header no token');
+        return res.status(401).json({ error: 'Нет токена' });
+    }
     const token = authHeader.split(' ')[1];
 
     // @ts-ignore
     jwt.verify(token, config.SECRET_KEY, (err, decoded) => {
-        if (err || typeof decoded !== 'object') return res.status(401).json({ error: 'Неверный токен' });
+        logger.info('[LOG]: jwt verfy');
+        if (err || typeof decoded !== 'object') {
+            logger.error('[ERROR]: invalid token');
+            return res.status(401).json({ error: 'Неверный токен' });
+        }
         const userData = decoded as TokenPayload;
+        logger.info('[LOG]: access is allowed');
         res.json({ message: 'Доступ разрешен', user: userData });
     });
 };
