@@ -47,7 +47,7 @@ yarn start
 ```
 
 ### Launching in Docker
-``bash
+```bash
 docker-compose up --build
 ```
 
