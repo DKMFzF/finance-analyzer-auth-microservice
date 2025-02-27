@@ -1,7 +1,7 @@
 import app from './app';
 import { LOGS } from './utils/custom.logs';
 import { config } from "./config/index.config";
-import logger from './utils/logger';
+import logger from './utils/logger/logger';
 
 const PORT = config.PORT;
 

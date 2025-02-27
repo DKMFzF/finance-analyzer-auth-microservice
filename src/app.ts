@@ -1,7 +1,7 @@
 import express from 'express';
 import routes from './routes';
 import { LOGS } from './utils/custom.logs';
-import logger from './utils/logger';
+import logger from './utils/logger/logger';
 import { errorHandler } from './middleware/error.middleware';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';

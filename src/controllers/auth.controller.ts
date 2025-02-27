@@ -2,8 +2,8 @@ import { Request, Response, NextFunction } from 'express';
 import { checkUserCredentials } from '../services/auth.service';
 // @ts-ignore
 import jwt from 'jsonwebtoken';
-import logger from '../utils/logger';
-import { loginSchema } from '../utils/validation';
+import logger from '../utils/logger/logger';
+import { loginSchema } from '../utils/validation/validation';
 
 export const login = async (req: Request, res: Response, next: NextFunction) => {
   try {

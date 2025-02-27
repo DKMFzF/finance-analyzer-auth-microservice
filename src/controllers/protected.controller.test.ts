@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 // @ts-ignore
 import jwt from 'jsonwebtoken';
 import { protectedRoute } from '../../src/controllers/protected.controller';
-import logger from '../../src/utils/logger';
+import logger from '../utils/logger/logger';
 
 // Мокаем jwt и logger
 jest.mock('jsonwebtoken');

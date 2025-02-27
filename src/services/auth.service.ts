@@ -1,5 +1,5 @@
 import axios from 'axios';
-import logger from '../utils/logger';
+import logger from '../utils/logger/logger';
 
 export const checkUserCredentials = async (login: string, password: string) => {
   logger.info('[LOG]: checkUserCredentials start');

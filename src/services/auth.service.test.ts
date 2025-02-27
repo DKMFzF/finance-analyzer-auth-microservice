@@ -1,6 +1,6 @@
 import { checkUserCredentials } from '../../src/services/auth.service';
 import axios from 'axios';
-import logger from '../../src/utils/logger';
+import logger from '../utils/logger/logger';
 
 jest.mock('axios');
 jest.mock('../../src/utils/logger');

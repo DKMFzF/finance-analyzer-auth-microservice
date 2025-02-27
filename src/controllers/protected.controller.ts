@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 // import { SECRET_KEY } from '../utils/jwt';
 import { TokenPayload } from '../types/user';
 import { config } from "../config/index.config"
-import logger from '../utils/logger';
+import logger from '../utils/logger/logger';
 
 export const protectedRoute = (req: Request, res: Response) => {
     const authHeader = req.headers.authorization;

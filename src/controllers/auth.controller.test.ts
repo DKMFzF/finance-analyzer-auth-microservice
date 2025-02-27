@@ -2,7 +2,7 @@ import { login } from '../../src/controllers/auth.controller';
 import { checkUserCredentials } from '../../src/services/auth.service';
 // @ts-ignore
 import jwt from 'jsonwebtoken';
-import logger from '../../src/utils/logger';
+import logger from '../utils/logger/logger';
 import { Request, Response, NextFunction } from 'express';
 
 jest.mock('../../src/services/auth.service');
