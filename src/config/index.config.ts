@@ -11,6 +11,9 @@ const configSchema = z.object({
   PORT: z.string().default("3000"),
   SECRET_KEY: z.string().default("supersecret"), // TODO: потом убрать
   USER_SERVICE_URL: z.string().url(),
+  USER_SERVICE_URL_CHECK_USER: z.string().default("/check-user"),
+  USER_SERVICE_URL_LOGIN: z.string().default("/login"),
+  USER_SERVICE_URL_PROTECTED: z.string().default("/protected"),
 });
 
 const envConfig = configSchema.safeParse(process.env);
