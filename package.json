@@ -6,7 +6,7 @@
     "start": "node dist/server.js",
     "build": "tsc",
     "dev": "tsc-watch --onSuccess \"node dist/app.js\"",
-    "test": ""
+    "test": "jest src/"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
     "@types/node": "^20.11.19",
     "@types/supertest": "^6.0.2",
     "jest": "^29.7.0",
+    "nock": "^14.0.1",
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.6",
     "tsc-watch": "^6.0.4",

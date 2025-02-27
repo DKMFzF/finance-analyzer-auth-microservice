@@ -1,18 +1,14 @@
 import axios from 'axios';
-import { config } from "../config/index.config";
-import { User } from '../types/user';
 import logger from '../utils/logger';
 
-/**
- * проверка что пользователь существует
- */
-
-export const checkUserCredentials = async (login: string, password: string): Promise<User> => {
-    logger.info("[LOG]: checkUserCredentials start");
-    const response = await axios.post<User>(
-      `${config.USER_SERVICE_URL}${config.USER_SERVICE_URL_CHECK_USER}`, 
-      { login, password }
-    );
-    logger.info("[LOG]: the user is in the system");
+export const checkUserCredentials = async (login: string, password: string) => {
+  logger.info('[LOG]: checkUserCredentials start');
+  try {
+    const response = await axios.post('http://user-service:4000/check-user', { login, password });
+    logger.info('[LOG]: the user is in the system');
     return response.data;
+  } catch (error) {
+    logger.error(`[ERROR]: ${error}`);
+    throw new Error('Invalid credentials');
+  }
 };

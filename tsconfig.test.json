@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist-test", // Отдельная папка для скомпилированных тестов
+    "rootDir": "./test"      // Указываем корневую папку для тестов
+  },
+  "include": ["test"],
+  "references": [{ "path": "./tsconfig.json" }] // Ссылка на основной конфиг
+}
